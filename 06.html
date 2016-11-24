@@ -1,22 +1,233 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>00</title>
+		<title>06</title>
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<style>
-			
+			*{
+				margin:0;
+				padding:0;
+			}
+
+			#wrapper{
+				width:100%;
+				height:100%;
+			}
+
+			#prevNext{
+			    position:fixed;
+			    top: 0;
+			    left: 0;
+			    right: 0;
+			    width: 30vw;
+			    margin: 0 auto;
+			    text-align: center;
+			}
+
+			#prevNext a{
+			    text-decoration:none;
+			    color:black;
+			}
+
+			#prevNext a:hover{
+			    text-decoration:none;
+			    color:blue;
+			}
+
+
+			.folder{
+				height:600px;
+				width:240px;
+				margin-left:300px;
+				margin-top:70px;position:fixed;
+
+			    -ms-transform: rotate(40deg); /* IE 9 */
+			    -webkit-transform: rotate(40deg); /* Safari */
+			    transform: rotate(40deg);
+
+
+			}
+
+			.soap{
+				height:200px;
+				width:200px;
+				position:fixed;
+				margin-top:500px;
+				margin-left:900px;
+			    -ms-transform: rotate(120deg); /* IE 9 */
+			    -webkit-transform: rotate(120deg); /* Safari */
+			    transform: rotate(120deg);
+
+			}
+
+			.ecodish{
+				height:400px;
+				width:240px;
+				position:fixed;
+				margin-left:800px;
+				margin-top:0px;
+
+			    -ms-transform: rotate(90deg); /* IE 9 */
+			    -webkit-transform: rotate(90deg); /* Safari */
+			    transform: rotate(90deg);
+
+			}
+
+			.foam{
+				height:300px;
+				width:300px;
+				position:fixed;
+			}
+
+			.lighter{	
+				height:100px;
+				width:50px;
+				position:fixed;
+				margin-top:500px;
+				margin-left:500px;
+
+
+			}
+
+			img{
+				max-height:100%;
+			}
+
+
+			.scaling{
+				float: left;
+				-webkit-animation-name: scalex;
+				-webkit-animation-duration:3s;
+				-webkit-animation-iteration-count:infinite;
+				-webkit-animation-timing-function:ease-in-out;
+				-moz-animation-name: scale;
+				-moz-animation-duration:3s;
+				-moz-animation-iteration-count:infinite;
+				-moz-animation-timing-function:ease-in-out;
+			}
+
+			@-webkit-keyframes scalex{
+			    from {-webkit-transform: scale(0.9);}
+			    65% {-webkit-transform: scale(1.0);}
+			    to {-webkit-transform: scale(0.9);}    
+			}
+			    
+			@-moz-keyframes scale{
+			    from {-moz-transform: scale(0.9);}
+			    65% {-moz-transform: scale(1.0);}
+			    to {-moz-transform: scale(0.9);}    
+			}
+
+
+			.floating{
+			    float: left;
+			    -webkit-animation-name: Floatingx;
+			    -webkit-animation-duration: 3s;
+			    -webkit-animation-iteration-count: infinite;
+			    -webkit-animation-timing-function: ease-in-out;
+			    -moz-animation-name: Floating;
+			    -moz-animation-duration: 3s;
+			    -moz-animation-iteration-count: infinite;
+			    -moz-animation-timing-function: ease-in-out;
+			    margin-left: 30px;
+			    margin-top: 5px;
+
+			}
+
+			@-webkit-keyframes Floatingx{
+			    from {-webkit-transform:translate(0, 0px);}
+			    65% {-webkit-transform:translate(0, 10px);}
+			    to {-webkit-transform: translate(0, -0px);    }    
+			}
+			    
+			@-moz-keyframes Floating{
+			    from {-moz-transform:translate(0, 0px);}
+			    65% {-moz-transform:translate(0, 1px);}
+			    to {-moz-transform: translate(0, -0px);}    
+			}
+
+
+			.floatinga{
+			    float: left;
+			    -webkit-animation-name: Floatingxa;
+			    -webkit-animation-duration: 2s;
+			    -webkit-animation-iteration-count: infinite;
+			    -webkit-animation-timing-function: ease-in-out;
+			    -moz-animation-name: Floatinga;
+			    -moz-animation-duration: 2s;
+			    -moz-animation-iteration-count: infinite;
+			    -moz-animation-timing-function: ease-in-out;
+			    margin-left: 30px;
+			    margin-top: 5px;
+
+			}
+
+			@-webkit-keyframes Floatingxa{
+			    from {-webkit-transform:translate(0, 0px);}
+			    65% {-webkit-transform:translate(0, 20px);}
+			    to {-webkit-transform: translate(0, -0px);    }    
+			}
+			    
+			@-moz-keyframes Floatinga{
+			    from {-moz-transform:translate(0, 0px);}
+			    65% {-moz-transform:translate(0, 20px);}
+			    to {-moz-transform: translate(0, -0px);}    
+			}
+
+
+			.floatingb{
+			    float: left;
+			    -webkit-animation-name: Floatingxb;
+			    -webkit-animation-duration: 4s;
+			    -webkit-animation-iteration-count: infinite;
+			    -webkit-animation-timing-function: ease-in-out;
+			    -moz-animation-name: Floatingb;
+			    -moz-animation-duration: 4s;
+			    -moz-animation-iteration-count: infinite;
+			    -moz-animation-timing-function: ease-in-out;
+			    margin-left: 30px;
+			    margin-top: 5px;
+
+			}
+
+			@-webkit-keyframes Floatingxb{
+			    from {-webkit-transform:translate(0, 0px);}
+			    65% {-webkit-transform:translate(0, 15px);}
+			    to {-webkit-transform: translate(0, -0px);    }    
+			}
+			    
+			@-moz-keyframes Floatingb{
+			    from {-moz-transform:translate(0, 0px);}
+			    65% {-moz-transform:translate(0, 15px);}
+			    to {-moz-transform: translate(0, -0px);}    
+			}
 		</style>
 	</head>
 
 
 
 <body>
+<div id="wrapper">
+	<div id="prevNext" class="scaling"><br>
+		<a href="05.html">Previous</a>
+		<a href="07.html">Next</a>
+	</div>
 
-	<a href="05.html">Previous</a>
-	<a href="07.html">Next</a>
+<div class="folder"><img class="floating" src="glyphs/11-noa-object1.png"/></div>
+<div class="soap"><img class="floatinga" src="glyphs/11-noa-object2.png"/></div>
+<div class="ecodish"><img class="floatingb" src="glyphs/11-noa-object3.png"/></div>
+<div class="foam"><img class="floating" src="glyphs/11-noa-object4.png"/></div>
+<div class="lighter"><img class="floatingb" src="glyphs/11-noa-object5.png"/></div>
 
+
+
+</div>
 </body>
+
+<script>
+
+</script>
 </html>
